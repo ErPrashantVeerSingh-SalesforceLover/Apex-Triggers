@@ -1,0 +1,11 @@
+/*IF LeadSource is Web, than put Fax's value as 100*/
+
+trigger SampleTrigger on Lead (before insert, before update) {
+
+    
+    for(Lead le:trigger.new){
+        if(le.LeadSource =='Web'){
+            le.Fax='100';
+        }
+    }
+}
